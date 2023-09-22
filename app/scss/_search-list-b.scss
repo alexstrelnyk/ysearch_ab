@@ -1,0 +1,63 @@
+.search-list-b {
+  max-width: 768px;
+  margin: 0 auto;
+
+  @include media-breakpoint-down(md) {
+    max-width: 704px;
+  }
+
+  &.img-circle {
+    .search-item {
+      .search-img {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .search-item {
+    box-shadow: $main-bs;
+    padding: 25px 30px;
+    text-decoration: none !important;
+
+    @include media-breakpoint-down(sm) {
+      padding: 25px 15px;
+    }
+
+    .search-img {
+      width: 82px;
+      height: 82px;
+      border-radius: 13px;
+      margin-right: 32px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+
+    .search-name {
+      flex: 1;
+      display: block;
+      margin: 0;
+      font-size: 18px;
+      color: #191b1e;
+      font-family: $font-bold;
+    }
+  }
+}
+
+$boxColour: (
+  1: #d5f4ff,
+  2: #b7e7f8,
+  3: #a5d7e8,
+  4: #95c2d1,
+  5: #84acba,
+  6: #95c2d1,
+  7: #a5d7e8,
+  8: #b7e7f8
+);
+
+@each $key, $colour in $boxColour {
+  .search-list-b .search-item:nth-child(8n + #{$key}) {
+    background-color: $colour;
+  }
+}

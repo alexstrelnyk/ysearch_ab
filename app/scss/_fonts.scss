@@ -1,0 +1,4 @@
+@import "_mixins/font-face";
+
+@include font-face("HelveticaNeue", "../fonts/HelveticaNeue/HelveticaNeue");
+@include font-face("HelveticaNeue-Bold", "../fonts/HelveticaNeue-Bold/HelveticaNeue-Bold", bold);

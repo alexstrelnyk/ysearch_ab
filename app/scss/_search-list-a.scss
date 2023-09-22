@@ -1,0 +1,42 @@
+.search-list-a {
+  max-width: 768px;
+  margin: 0 auto;
+
+  @include media-breakpoint-down(md) {
+    max-width: 508px;
+  }
+
+  .search-item {
+    display: block;
+    padding: 15px 32px;
+    border-bottom: 1px solid #d9dade;
+    text-decoration: none !important;
+
+    @include media-breakpoint-down(sm) {
+      padding: 15px;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .search-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 26px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+
+    .search-name {
+      flex: 1;
+      margin: 0;
+      color: #4e525d;
+      font-size: 18px;
+      font-family: $font-bold;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.search-list-c {
+  .search-item {
+    width: 284px;
+    height: 284px;
+    background-color: #000;
+    padding: 30px 10px;
+    text-align: center;
+    text-decoration: none;
+
+    &:last-child {
+      @media (max-width: 1183px) {
+        display: none;
+      }
+
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      width: 33.333%;
+      height: 256px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 50%;
+      height: 187.5px;
+      padding: 20px 10px;
+    }
+
+    @media (max-width: 320px) {
+      height: 160px;
+    }
+
+    .search-img {
+      width: 125px;
+      height: 125px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      -webkit-background-size: cover;
+      background-size: cover;
+      margin: 0 auto 20px;
+      border-radius: 13px;
+
+      @include media-breakpoint-down(sm) {
+        width: 82px;
+        height: 82px;
+      }
+
+      @media (max-width: 320px) {
+        height: 62px;
+        width: 62px;
+      }
+    }
+
+    .search-name {
+      flex: 1;
+      margin: 0;
+      font-size: 18px;
+      font-family: $font-bold;
+      line-height: 1.33;
+      color: #fff;
+
+      @include media-breakpoint-down(md) {
+        height: 70px;
+        overflow: hidden;
+      }
+
+      @include media-breakpoint-down(sm) {
+        height: 50px;
+      }
+    }
+  }
+}
+
+$boxColour: (
+        1: #609e9e,
+        2: #589090,
+        3: #4f8282,
+        4: #467373,
+        5: #3e6565,
+        6: #355757
+);
+
+@each $key, $colour in $boxColour {
+  .search-list-c .search-item:nth-child(6n + #{$key}) {
+    background-color: $colour;
+  }
+}
